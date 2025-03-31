@@ -30,3 +30,20 @@ Check if all services are running:
 docker ps
 ```
 You should see containers for `client_service`, `database_service` and `business_service`.
+
+## API Endpoints
+**Client Service**
+Port 8003; url `http://localhost:8003/`
+- `GET /health` → Check service status.
+- `POST /process-data` → Process a tweet and return its sentiment (inout).
+
+## Authentication
+The **Client Service** uses token-based authentication. Each request must include an authentication token.
+
+Example request using curl:
+```bash
+curl -X POST "http://0.0.0.0:8003/process-data?token=your_secret_token" \
+     -H "Content-Type: application/json" \
+     -d '{"key": "tweet1", "value": "This is an amazing product!"}'
+```
+
