@@ -76,3 +76,16 @@ curl -X POST "http://0.0.0.0:8003/process-data?token=your_secret_token" \
      -d '{"key": "tweet1", "value": "This is an amazing product!"}'
 ```
 
+## Start All Services with One Command
+To quickly build and start all services, use the provided script:
+
+```bash
+./start.sh
+```
+If you get a permission error, run:
+```bash
+chmod +x start.sh
+./start.sh
+```
+This script builds the Docker images and starts all services in the background.
+
